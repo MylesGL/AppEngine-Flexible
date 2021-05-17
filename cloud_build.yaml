@@ -2,7 +2,6 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', '--project', '$PROJECT_ID', 
          '-q', '$_ENV_PROMOTE', '-v', '$_ENV_VERSION']
-timeout: "1600s"
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'services', '--project', '$PROJECT_ID', 
          'set-traffic', '--splits', '$_ENV_TRAFFIC']
